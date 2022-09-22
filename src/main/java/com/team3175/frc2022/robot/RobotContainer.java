@@ -86,8 +86,8 @@ public class RobotContainer {
   private final Command m_threeBallDERed = new ThreeBallDERed(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
 
   //Two ball defensive
-  private final Command m_twoBallADefenseIntakeBlue = new TwoBallADefenseIntakeBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
-  private final Command m_twoBallADefenseIntakeRed = new TwoBallADefenseIntakeRed(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
+  private final Command m_twoBallADefenseHangarBlue = new TwoBallADefenseHangarBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
+  private final Command m_twoBallADefenseHangarRed = new TwoBallADefenseHangarRed(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
 
   //One ball defensive hangar
   private final Command m_oneBallDefenseHangarBlue = new OneBallDefenseHangarBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
@@ -120,8 +120,8 @@ public class RobotContainer {
     autoChooser.addOption("Four Ball BCD (terminal) Blue", m_fourBallBCDBlue);
     autoChooser.addOption("Three Ball DE (gamer) Red", m_threeBallDERed);
     autoChooser.addOption("Three Ball DE (gamer) Blue", m_threeBallDEBlue);
-    autoChooser.addOption("Two Ball A Defense Blue", m_twoBallADefenseIntakeBlue);
-    autoChooser.addOption("Two Ball A Defense Red", m_twoBallADefenseIntakeRed);
+    autoChooser.addOption("Two Ball A Defense Hangar Blue", m_twoBallADefenseHangarBlue);
+    autoChooser.addOption("Two Ball A Defense Hangar Red", m_twoBallADefenseHangarRed);
     autoChooser.addOption("One Ball Defense Hangar Blue", m_oneBallDefenseHangarBlue);
     autoChooser.addOption("One Ball Defense Hangar Red", m_oneBallDefenseHangarRed);
     autoChooser.addOption("One Ball Defense Hub Blue", m_oneBallDefenseHubBlue);
