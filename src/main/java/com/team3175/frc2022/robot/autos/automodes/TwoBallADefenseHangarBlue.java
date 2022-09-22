@@ -99,7 +99,6 @@ public class TwoBallADefenseHangarBlue extends SequentialCommandGroup {
             m_drivetrain::setModuleStates, 
             m_drivetrain);
 
-        AutonSpinUp m_spinUp1 = new AutonSpinUp(m_shooter, Constants.SHOOTER_TARGET_RPM);
         AutonSpinUp m_spinUp2 = new AutonSpinUp(m_shooter, Constants.SHOOTER_TARGET_RPM);
 
         AutonShootAndFeed m_shootAndFeed1 = new AutonShootAndFeed(m_shooter, m_feeder, Constants.FEEDER_TICKS, Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
@@ -111,7 +110,6 @@ public class TwoBallADefenseHangarBlue extends SequentialCommandGroup {
 
         addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(m_initialPose)),
                     new InstantCommand(() -> m_feeder.resetEncoders()),
-                    m_spinUp1,
                     m_shootAndFeed1,
                     new ParallelCommandGroup(m_intakeACommand, m_deployIntake),
                     new ParallelCommandGroup(m_shootACommand, m_spinUp2),

@@ -96,6 +96,7 @@ public class ThreeBallBCBlue extends SequentialCommandGroup {
             m_drivetrain::setModuleStates, 
             m_drivetrain);
 
+         AutonShootAndFeed m_shootAndFeed0 = new AutonShootAndFeed(m_shooter, m_feeder, Constants.FEEDER_TICKS, Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
         AutonShootAndFeed m_shootAndFeed1 = new AutonShootAndFeed(m_shooter, m_feeder, Constants.FEEDER_TICKS, Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
         AutonShootAndFeed m_shootAndFeed2 = new AutonShootAndFeed(m_shooter, m_feeder, (Constants.FEEDER_TICKS * 2), Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
 
@@ -105,8 +106,9 @@ public class ThreeBallBCBlue extends SequentialCommandGroup {
         SetIntakeState m_intakeRetract = new SetIntakeState(m_intake, m_actuators, "retract", Constants.INTAKE_SPEED);
         SetIntakeState m_intakeRetract2 = new SetIntakeState(m_intake, m_actuators, "retract", 0);
 
-        addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(new Pose2d(7.57, 1.79, Rotation2d.fromDegrees(-87.88)))),
+        addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(new Pose2d(7.80, 2.94, Rotation2d.fromDegrees(68.75)))),
                     new InstantCommand(() -> m_feeder.resetEncoders()),
+                    m_shootAndFeed0,
                     new ParallelCommandGroup(m_trajectoryCommand, m_intakeDeploy),
                     new ParallelCommandGroup(m_trajectoryCommand2, m_intakeRetract, new InstantCommand(() -> m_shooter.shoot(Constants.SHOOTER_TARGET_RPM))),
                     new StopSwerve(m_drivetrain),
