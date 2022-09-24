@@ -58,6 +58,7 @@ public class OneBall extends SequentialCommandGroup {
         AutonShootAndFeed m_shootAndFeed = new AutonShootAndFeed(m_shooter, m_feeder, Constants.FEEDER_TICKS, Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
 
         addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(m_initialPose)),
+                    new WaitCommand(1.0),
                     m_spinUp,
                     m_shootAndFeed,
                     new WaitCommand(2.0),

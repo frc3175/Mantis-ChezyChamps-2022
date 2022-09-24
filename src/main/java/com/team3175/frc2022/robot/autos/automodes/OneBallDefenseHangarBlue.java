@@ -21,6 +21,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 
 public class OneBallDefenseHangarBlue extends SequentialCommandGroup {
 
@@ -78,6 +79,7 @@ public class OneBallDefenseHangarBlue extends SequentialCommandGroup {
         AutonShootAndFeed m_shootAndFeed = new AutonShootAndFeed(m_shooter, m_feeder, Constants.FEEDER_TICKS, Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
 
         addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(m_initialPose)),
+                    new WaitCommand(1.0),
                     m_spinUp,
                     m_shootAndFeed,
                     new ParallelCommandGroup(m_driveCommand, new SetIntakeState(m_intake, m_actuators, "deploy", 0.1)),
