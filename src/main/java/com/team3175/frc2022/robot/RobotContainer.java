@@ -102,8 +102,8 @@ public class RobotContainer {
   private final Command m_oneBallDefenseHubRed = new OneBallDefenseHubRed(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
   
   //Corn Dog
-  private final Command m_cornDogBlue = new CornDogBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
-  private final Command m_cornDogRed = new CornDogBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
+  //private final Command m_cornDogBlue = new CornDogBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
+  //private final Command m_cornDogRed = new CornDogBlue(m_shooter, m_feeder, m_intake, m_actuator, m_swerveDrivetrain);
 
 
   public RobotContainer(){
@@ -136,8 +136,8 @@ public class RobotContainer {
     autoChooser.addOption("One Ball Defense Hangar Red", m_oneBallDefenseHangarRed);
     autoChooser.addOption("One Ball Defense Hub Blue", m_oneBallDefenseHubBlue);
     autoChooser.addOption("One Ball Defense Hub Red", m_oneBallDefenseHubRed);
-    autoChooser.addOption("Corn Dog Blue", m_cornDogBlue);
-    autoChooser.addOption("Corn Dog Red", m_cornDogRed);
+    //autoChooser.addOption("Corn Dog Blue", m_cornDogBlue);
+    //autoChooser.addOption("Corn Dog Red", m_cornDogRed);
     SmartDashboard.putData("Auto mode", autoChooser);
     
     /* Configure the button bindings */

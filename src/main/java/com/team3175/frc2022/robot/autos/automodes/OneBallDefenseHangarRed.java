@@ -79,7 +79,7 @@ public class OneBallDefenseHangarRed extends SequentialCommandGroup {
         AutonShootAndFeed m_shootAndFeed = new AutonShootAndFeed(m_shooter, m_feeder, Constants.FEEDER_TICKS, Constants.SHOOTER_TARGET_RPM, Constants.FEEDER_PERCENT_OUTPUT);
 
         addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(m_initialPose)),
-                    new WaitCommand(1.0),
+                    new WaitCommand(3.0),
                     m_spinUp,
                     m_shootAndFeed,
                     new WaitCommand(1.0),

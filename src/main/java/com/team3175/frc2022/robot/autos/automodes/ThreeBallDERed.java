@@ -109,6 +109,7 @@ public class ThreeBallDERed extends SequentialCommandGroup {
 
         addCommands(new InstantCommand(() -> m_drivetrain.resetOdometry(new Pose2d(7.11, 4.57, Rotation2d.fromDegrees(-20.56)))),
                     new InstantCommand(() -> m_feeder.resetEncoders()),
+                    new WaitCommand(3.0),
                     m_spinUp1,
                     m_shootAndFeed1,
                     new ParallelCommandGroup(m_trajectoryCommand),
