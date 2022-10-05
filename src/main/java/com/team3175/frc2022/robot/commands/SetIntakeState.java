@@ -62,6 +62,10 @@ public class SetIntakeState extends CommandBase {
                 }
                 m_actuators.actuate();
                 m_intake.stopIntake();
+                break;
+            case "stop intake" :
+                m_intake.stopIntake();
+                break;  
 
         }
 
